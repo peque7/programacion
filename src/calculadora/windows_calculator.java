@@ -73,7 +73,6 @@ public class windows_calculator extends javax.swing.JFrame {
 
         l_cuenta.setFont(new java.awt.Font("MV Boli", 0, 36)); // NOI18N
         l_cuenta.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        l_cuenta.setText("444+1");
 
         javax.swing.GroupLayout p_cuentaLayout = new javax.swing.GroupLayout(p_cuenta);
         p_cuenta.setLayout(p_cuentaLayout);
@@ -126,6 +125,11 @@ public class windows_calculator extends javax.swing.JFrame {
         btn_borrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         btn_borrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_borrar.setFocusable(false);
+        btn_borrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_borrarActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_borrar);
         btn_borrar.setBounds(10, 11, 55, 55);
 
@@ -196,6 +200,11 @@ public class windows_calculator extends javax.swing.JFrame {
         btn_retrocede.setBorder(null);
         btn_retrocede.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btn_retrocede.setFocusable(false);
+        btn_retrocede.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_retrocedeActionPerformed(evt);
+            }
+        });
         jPanel1.add(btn_retrocede);
         btn_retrocede.setBounds(71, 11, 55, 55);
 
@@ -533,7 +542,8 @@ public class windows_calculator extends javax.swing.JFrame {
 
     private void btn_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_totalActionPerformed
         // TODO add your handling code here:
-        Cap.ingresaCaracter(l_resultado.getText());
+        l_cuenta.setText(l_resultado.getText());
+        l_resultado.setText(String.valueOf(Cap.ingresaCaracter(l_resultado.getText())));
     }//GEN-LAST:event_btn_totalActionPerformed
 
     private void btn_sumaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_sumaActionPerformed
@@ -555,6 +565,17 @@ public class windows_calculator extends javax.swing.JFrame {
         // TODO add your handling code here:
         l_resultado.setText(l_resultado.getText()+"/");
     }//GEN-LAST:event_btn_divicionActionPerformed
+
+    private void btn_retrocedeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_retrocedeActionPerformed
+        // TODO add your handling code here:
+        //String cadenaNueva = cadena.substring(0, cadena.length()-1); 
+        l_resultado.setText(l_resultado.getText().substring(0, l_resultado.getText().length()-1));
+    }//GEN-LAST:event_btn_retrocedeActionPerformed
+
+    private void btn_borrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_borrarActionPerformed
+        // TODO add your handling code here:
+         l_resultado.setText("");
+    }//GEN-LAST:event_btn_borrarActionPerformed
 
     /**
      * @param args the command line arguments
