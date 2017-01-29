@@ -62,6 +62,7 @@ public class windows_calculator extends javax.swing.JFrame {
         btn_nose = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Calculator");
 
         p_contenedor.setBackground(new java.awt.Color(255, 255, 255));
         p_contenedor.setLayout(null);
@@ -508,7 +509,7 @@ public class windows_calculator extends javax.swing.JFrame {
 
     private void btn_5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_5ActionPerformed
         // TODO add your handling code here:
-        l_resultado.setText(l_resultado.getText()+"0");
+        l_resultado.setText(l_resultado.getText()+"5");
     }//GEN-LAST:event_btn_5ActionPerformed
 
     private void btn_6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_6ActionPerformed
@@ -542,6 +543,7 @@ public class windows_calculator extends javax.swing.JFrame {
 
     private void btn_totalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_totalActionPerformed
         // TODO add your handling code here:
+        
         l_cuenta.setText(l_resultado.getText());
         l_resultado.setText(String.valueOf(Cap.ingresaCaracter(l_resultado.getText())));
     }//GEN-LAST:event_btn_totalActionPerformed
